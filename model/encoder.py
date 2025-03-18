@@ -8,6 +8,7 @@ class Encoder(object):
     def __call__(self, training, img, dropout):
         img = tf.cast(img, tf.float32) / 255.
         with tf.name_scope("convolutional_encoder"):
+            # cnn 3x3 - > 64 - 128 - 256 - 256 - maxpool2d(2,1) - 512 - maxpool2d(2,1) - 512
             out = tf.keras.layers.Conv2D(64, 3, strides=1, padding="same", activation="relu")(img)
             out = tf.keras.layers.Conv2D(128, 3, strides=1, padding="same", activation="relu")(out)
             out = tf.keras.layers.Conv2D(256, 3, strides=1, padding="same", activation="relu")(out)
