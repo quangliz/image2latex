@@ -1,3 +1,5 @@
+# download data
+from here https://zenodo.org/records/56198#.V2p0KTXT6eA
 # preprocess images
 ```
 python3 scripts/preprocessing/preprocess_images.py --input-dir data/formula_images --output-dir data/processed_formula_images
